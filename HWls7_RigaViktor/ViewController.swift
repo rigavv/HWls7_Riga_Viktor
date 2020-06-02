@@ -8,27 +8,30 @@
 
 import UIKit
 
-protocol NameDelegate: class {
-    func sendingString(name: String, surname: String)
+protocol FullNameDelegate: class {
+    func sendFullName(name: String, surname: String)
 }
 
-class ViewController: UIViewController, NameDelegate{
+class ViewController: UIViewController, FullNameDelegate{
     
+    
+
     @IBOutlet weak var finishLable: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "goToFirstVC" else { return }
-        guard  let destination = segue.destination as? ThirdViewController else { return }
-        destination.delegate = self
-    }
-
-    func sendingString(name: String, surname: String) {
+           super.prepare(for: segue, sender: sender)
+           if segue.identifier == "segueToNameVC", let destinationVC = segue.destination as? SecondViewController {
+               destinationVC.view.backgroundColor = .green
+           }
+       }
+    
+    func sendFullName(name: String, surname: String) {
         finishLable.text = "\(name) \(surname)"
     }
-
 }
 

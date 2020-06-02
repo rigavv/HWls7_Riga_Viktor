@@ -10,22 +10,21 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet weak var nameLable: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
-    
-    weak var delegate: NameDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-    @IBAction func nextButtonAction(_ sender: Any) {
-        if let name = nameLable.text {
-            delegate?.sendingString(name: name, surname: "")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "segueToSurnameVC", let destinationVC = segue.destination as? ThirdViewController {
+            _ = destinationVC.view
+            destinationVC.nameLable.text = nameTextField.text
+            destinationVC.view.backgroundColor = .yellow
         }
-        dismiss(animated: true, completion: nil)
     }
-    
 
 }
+

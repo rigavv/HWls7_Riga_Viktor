@@ -9,22 +9,33 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
-
-    @IBOutlet weak var surnameLable: UILabel!
+    
+    @IBOutlet weak var nameLable: UILabel!
+    
     @IBOutlet weak var surnameTextField: UITextField!
     
-    weak var delegate: NameDelegate?
+    weak var delegate: FullNameDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        if segue.identifier == "segueToFinish", let destinationVC = segue.destination as? ViewController {
+//            _ = destinationVC.view
+//            destinationVC.finishLable.text = "\(String(describing: nameLable)),\(String(describing: surnameTextField.text)) "
+//            destinationVC.view.backgroundColor = .brown
+//        }
+//    }
+    
     @IBAction func finishButtonAction(_ sender: UIButton) {
-        if let name = surnameLable.text, let surname = surnameTextField.text{
-        delegate?.sendingString(name: name, surname: surname)
+        if let name = nameLable.text, let surname = surnameTextField.text{
+        delegate?.sendFullName(name: name, surname: surname)
+        print(name, surname)
         }
-        dismiss(animated: true, completion: nil)
     }
     
 }

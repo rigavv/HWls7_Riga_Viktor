@@ -18,12 +18,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFW-yA-jld">
                                 <rect key="frame" x="20" y="328" width="339" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Press me ;)">
-                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Press me ;)"/>
                                 <connections>
-                                    <segue destination="CEu-O0-1hG" kind="show" identifier="firstButtonSegue" id="GJR-0C-tfT"/>
+                                    <segue destination="CEu-O0-1hG" kind="show" identifier="segueToNameVC" id="1sT-Ca-xrq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is Name + Surname App ;)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dz-6s-Hiv">
@@ -34,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FinishLable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04n-yw-BNX">
-                                <rect key="frame" x="71" y="277" width="237" height="43"/>
+                                <rect key="frame" x="69" y="277" width="237" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -46,8 +44,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="y1H-D7-FSr"/>
                     <connections>
-                        <outlet property="finishLable" destination="04n-yw-BNX" id="tA6-W7-CJq"/>
-                        <segue destination="CEu-O0-1hG" kind="show" identifier="goToSecondVC" id="VHn-Eu-WH8"/>
+                        <outlet property="finishLable" destination="04n-yw-BNX" id="3me-xI-jWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,37 +65,34 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="nextButtonAction:" destination="CEu-O0-1hG" eventType="touchUpInside" id="WpX-Q1-f3v"/>
-                                    <segue destination="eqK-he-cgY" kind="show" identifier="secondButtonSegue" id="xbF-xW-JFH"/>
+                                    <segue destination="eqK-he-cgY" kind="show" identifier="segueToSurnameVC" id="nwy-iT-53Z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSe-To-eA8">
-                                <rect key="frame" x="20" y="272" width="339" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uGP-d6-6EH">
                                 <rect key="frame" x="20" y="213" width="339" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSe-To-eA8">
+                                <rect key="frame" x="18" y="255" width="339" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Lif-yt-Y2M"/>
                     </view>
                     <navigationItem key="navigationItem" id="WwS-nL-kqd"/>
                     <connections>
-                        <outlet property="nameLable" destination="lSe-To-eA8" id="xd4-GC-Z0f"/>
-                        <outlet property="nameTextField" destination="uGP-d6-6EH" id="Bx9-Kn-wDa"/>
-                        <segue destination="eqK-he-cgY" kind="show" identifier="goToThirdVC" id="vfG-Jl-4uW"/>
+                        <outlet property="nameTextField" destination="uGP-d6-6EH" id="k2b-eO-vjt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJx-jd-0PL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-125.59999999999999" y="-98.50074962518741"/>
+            <point key="canvasLocation" x="-95" y="-160"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="xsG-a7-adw">
@@ -114,12 +108,12 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Finish Button"/>
                                 <connections>
-                                    <action selector="finishButtonAction:" destination="eqK-he-cgY" eventType="touchUpInside" id="gtL-ud-H12"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="finishButtonSegue" id="eEq-k4-PCV"/>
+                                    <action selector="finishButtonAction:" destination="eqK-he-cgY" eventType="touchUpInside" id="Vpa-gB-2Me"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ikZ-m5-u4A"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a Surnane" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw8-3I-Ll7">
-                                <rect key="frame" x="20" y="304" width="339" height="72"/>
+                                <rect key="frame" x="20" y="238" width="339" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -131,15 +125,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NameLable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olB-0N-WIA">
+                                <rect key="frame" x="138" y="141" width="102" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="svF-ML-lyb"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y87-ur-bt3"/>
                     <connections>
-                        <outlet property="surnameLable" destination="vw8-3I-Ll7" id="Wdj-Pd-YAv"/>
-                        <outlet property="surnameTextField" destination="cHP-vx-L4b" id="gbe-35-BvX"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToFirstVC" id="jz7-yr-tgg"/>
+                        <outlet property="nameLable" destination="olB-0N-WIA" id="9Eq-ki-lGx"/>
+                        <outlet property="surnameTextField" destination="cHP-vx-L4b" id="i9k-aD-80G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4B-wF-if6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -147,9 +147,4 @@
             <point key="canvasLocation" x="797.60000000000002" y="-623.83808095952031"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="xbF-xW-JFH"/>
-        <segue reference="GJR-0C-tfT"/>
-        <segue reference="jz7-yr-tgg"/>
-    </inferredMetricsTieBreakers>
 </document>
