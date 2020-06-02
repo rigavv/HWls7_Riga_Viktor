@@ -30,6 +30,7 @@ class ViewController: UIViewController, FullNameDelegate{
            }
        }
     
+    
     func sendFullName(name: String, surname: String) {
         finishLable.text = "\(name) \(surname)"
     }

@@ -108,12 +108,11 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Finish Button"/>
                                 <connections>
-                                    <action selector="finishButtonAction:" destination="eqK-he-cgY" eventType="touchUpInside" id="Vpa-gB-2Me"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ikZ-m5-u4A"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segueToFinish" id="Rff-uF-bX3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a Surnane" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw8-3I-Ll7">
-                                <rect key="frame" x="20" y="238" width="339" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw8-3I-Ll7">
+                                <rect key="frame" x="126" y="238" width="127" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
